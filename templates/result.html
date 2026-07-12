@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Analysis Result | Auroun DataSYN 2.0</title>
+
+<link rel="icon" href="{{ url_for('static', filename='css/logo.png') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+<div class="gradient-overlay"></div>
+
+<header class="header">
+
+<nav class="navbar">
+
+<a href="/" class="logo">
+
+<img src="{{ url_for('static', filename='css/logo.png') }}">
+
+<span>Auroun DataSYN 2.0</span>
+
+</a>
+
+<ul class="nav-links">
+
+<li><a href="/">Home</a></li>
+<li><a href="/dashboard">Dashboard</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<p class="hero-tag">
+
+AI POWERED DATA ANALYTICS
+
+</p>
+
+<h1>
+
+Dataset
+
+<span>Analysis Report</span>
+
+</h1>
+
+<p>
+
+Premium Artificial Intelligence Report generated automatically.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= KPI ================= -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>AI OVERVIEW</span>
+
+<h2>Dataset Statistics</h2>
+
+</div>
+
+<div class="kpi-grid">
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">📄</div>
+<h2>{{ rows }}</h2>
+<p>Total Rows</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">📋</div>
+<h2>{{ columns }}</h2>
+<p>Total Columns</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">🔢</div>
+<h2>{{ numeric_columns }}</h2>
+<p>Numeric Columns</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">⚠</div>
+<h2>{{ missing_values }}</h2>
+<p>Missing Values</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">📑</div>
+<h2>{{ duplicate_rows }}</h2>
+<p>Duplicate Rows</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">🤖</div>
+<h2>{{ ai_score }}%</h2>
+<p>AI Dataset Score</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= HEALTH ================= -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>AI HEALTH</span>
+
+<h2>Dataset Quality</h2>
+
+</div>
+
+<div class="dashboard-grid">
+
+<div class="glass-card reveal">
+
+    <h3>Dataset Health</h3>
+
+    <canvas id="gaugeChart" height="120"></canvas>
+
+    <h2 style="text-align:center; color:#00E5FF; margin-top:20px;">
+        Dataset Health : 99%
+    </h2>
+
+</div>
+
+<div class="glass-card reveal">
+
+<h3>AI Recommendation</h3>
+
+<p>
+
+✔ Dataset Uploaded Successfully
+
+<br><br>
+
+✔ Ready for Machine Learning
+
+<br><br>
+
+✔ Ready for Dashboard Analytics
+
+<br><br>
+
+✔ AI Confidence : 99%
+
+<br><br>
+
+✔ Suitable for Business Intelligence
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+        AI INSIGHTS
+========================================== -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+        <span>AI INSIGHTS</span>
+        <h2>Artificial Intelligence Analysis</h2>
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="glass-card reveal">
+            <h3>🤖 ML Readiness</h3>
+            <h2>98%</h2>
+            <p>Your dataset is ready for Machine Learning.</p>
+        </div>
+
+        <div class="glass-card reveal">
+            <h3>📈 Business Intelligence</h3>
+            <h2>Excellent</h2>
+            <p>Suitable for Power BI and Dashboard Analytics.</p>
+        </div>
+
+        <div class="glass-card reveal">
+            <h3>⚡ AI Confidence</h3>
+            <h2>99%</h2>
+            <p>Analysis generated successfully.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        DATASET INFORMATION
+========================================== -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>UPLOAD RESULT</span>
+
+<h2>Dataset Information</h2>
+
+</div>
+
+<div class="dashboard-grid">
+
+<div class="glass-card reveal">
+<h3>📄 File Name</h3>
+<h2>{{ filename }}</h2>
+</div>
+
+<div class="glass-card reveal">
+<h3>📊 Total Rows</h3>
+<h2>{{ rows }}</h2>
+</div>
+
+<div class="glass-card reveal">
+<h3>📋 Total Columns</h3>
+<h2>{{ columns }}</h2>
+</div>
+
+<div class="glass-card reveal">
+<h3>🔢 Numeric Columns</h3>
+<h2>{{ numeric_columns }}</h2>
+</div>
+
+<div class="glass-card reveal">
+<h3>⚠ Missing Values</h3>
+<h2>{{ missing_values }}</h2>
+</div>
+
+<div class="glass-card reveal">
+<h3>📑 Duplicate Rows</h3>
+<h2>{{ duplicate_rows }}</h2>
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+        DATA PREVIEW
+========================================== -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>DATA PREVIEW</span>
+
+<h2>Uploaded Dataset</h2>
+
+</div>
+
+<div class="glass-card reveal">
+
+<div class="table-responsive">
+
+{{ preview|safe }}
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+        AI SUMMARY
+========================================== -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>AI SUMMARY</span>
+
+<h2>Statistical Analysis</h2>
+
+</div>
+
+<div class="glass-card reveal">
+
+<div class="table-responsive">
+
+{{ summary|safe }}
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+        AI GENERATED CHARTS
+========================================== -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>VISUAL ANALYTICS</span>
+
+<h2>AI Generated Charts</h2>
+
+</div>
+
+<div class="dashboard-grid">
+
+{% if histogram_chart %}
+<div class="glass-card reveal">
+<h3>📊 Histogram</h3>
+<img src="{{ url_for('static', filename=histogram_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if bar_chart %}
+<div class="glass-card reveal">
+<h3>📈 Bar Chart</h3>
+<img src="{{ url_for('static', filename=bar_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if pie_chart %}
+<div class="glass-card reveal">
+<h3>🥧 Pie Chart</h3>
+<img src="{{ url_for('static', filename=pie_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if line_chart %}
+<div class="glass-card reveal">
+<h3>📉 Line Chart</h3>
+<img src="{{ url_for('static', filename=line_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if scatter_chart %}
+<div class="glass-card reveal">
+<h3>🔵 Scatter Plot</h3>
+<img src="{{ url_for('static', filename=scatter_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if column_chart %}
+<div class="glass-card reveal">
+<h3>📋 Column Chart</h3>
+<img src="{{ url_for('static', filename=column_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+
+</div>
+
+</section>
+<!-- ==========================================
+      AI CHATBOT
+========================================== -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+        <span>AI COPILOT</span>
+        <h2>Auroun AI Assistant</h2>
+    </div>
+
+    <div class="glass-card reveal">
+
+        <div class="chat-box" id="chatBox">
+
+            <div class="bot-message">
+                👋 Hello, Welcome to <b>Auroun DataSYN 2.0</b>.<br><br>
+                I can help you with:
+                <br>📊 Dataset Summary
+                <br>📈 Rows & Columns
+                <br>⚠ Missing Values
+                <br>📑 Duplicate Rows
+                <br>🔢 Numeric Columns
+            </div>
+
+        </div>
+
+        <div class="chat-input-area">
+
+            <input
+                type="text"
+                id="question"
+                placeholder="Ask Auroun AI..."
+                class="form-control">
+
+            <button
+                class="primary-btn"
+                onclick="askAI()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+<script>
+const datasetInfo = {
+    filename: "{{ filename }}",
+    rows: "{{ rows }}",
+    columns: "{{ columns }}",
+    missing_values: "{{ missing_values }}",
+    duplicate_rows: "{{ duplicate_rows }}",
+    numeric_columns: "{{ numeric_columns }}"
+};
+<!-- ==========================================
+        DOWNLOAD REPORT
+========================================== -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+        <span>EXPORT</span>
+        <h2>Download Report</h2>
+    </div>
+
+    <div style="text-align:center;">
+
+    <div class="download-report">
+        <a href="/download_report" class="primary-btn">
+
+            📄 Download AI Report (PDF)
+
+        </a>
+
+    </div>
+
+</section>
+
+</script>
+
+</section>
+
+<div style="text-align:center;margin:50px 0;">
+
+<a
+class="primary-btn"
+href="{{ url_for(
+'download_report',
+filename=filename,
+rows=rows,
+columns=columns,
+numeric_columns=numeric_columns,
+missing_values=missing_values,
+duplicate_rows=duplicate_rows,
+ai_score=ai_score
+) }}">
+
+📄 Download AI Report PDF
+
+</a>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/neural.js') }}"></script>
+
+</body>
+</html>
