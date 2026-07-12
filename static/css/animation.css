@@ -1,0 +1,565 @@
+/* ==========================================================
+   AUROUN DATASYN 2.0
+   PREMIUM ANIMATIONS
+   ========================================================== */
+
+
+/* ==========================================================
+   FADE UP
+   ========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   FADE LEFT
+   ========================================================== */
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-70px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   FADE RIGHT
+   ========================================================== */
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(70px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   ZOOM
+   ========================================================== */
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.75);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   FLOATING
+   ========================================================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   GLOW
+   ========================================================== */
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:
+        0 0 12px rgba(0,229,255,.25);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 40px rgba(0,229,255,.55);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 12px rgba(0,229,255,.25);
+
+    }
+
+}
+
+
+/* ==========================================================
+   ROTATE
+   ========================================================== */
+
+@keyframes rotateSlow{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.hero-content{
+
+    animation:fadeLeft 1s ease forwards;
+
+}
+
+.hero-visual{
+
+    animation:fadeRight 1.2s ease forwards;
+
+}
+
+
+/* ==========================================================
+   GLASS CARDS
+   ========================================================== */
+
+.glass-card{
+
+    animation:floating 6s ease-in-out infinite;
+
+}
+
+.card-one{
+
+    animation-delay:.2s;
+
+}
+
+.card-two{
+
+    animation-delay:.8s;
+
+}
+
+.card-three{
+
+    animation-delay:1.3s;
+
+}
+
+.card-four{
+
+    animation-delay:1.8s;
+
+}
+
+
+/* ==========================================================
+   SECTION HEADINGS
+   ========================================================== */
+
+.section-heading{
+
+    animation:fadeUp .9s ease;
+
+}
+
+
+/* ==========================================================
+   OVERVIEW CARDS
+   ========================================================== */
+
+.overview-card{
+
+    animation:zoomIn .8s ease;
+
+}
+
+.overview-card:hover{
+
+    animation:glow 1.4s infinite;
+
+}
+
+
+/* ==========================================================
+   SERVICE CARDS
+   ========================================================== */
+
+.service-card{
+
+    transition:.4s;
+
+}
+
+.service-card:hover{
+
+    animation:glow 1.2s infinite;
+
+}
+
+
+/* ==========================================================
+   TECH BOX
+   ========================================================== */
+
+.tech-box{
+
+    transition:.35s;
+
+}
+
+.tech-box:hover{
+
+    transform:translateY(-8px) scale(1.05);
+
+}/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+.primary-btn,
+.btn-primary{
+
+    transition:.35s;
+
+}
+
+.primary-btn:hover,
+.btn-primary:hover{
+
+    transform:translateY(-6px);
+
+}
+/* ==========================================================
+   NAVBAR ANIMATION
+   ========================================================== */
+
+.header{
+
+    animation:fadeUp .8s ease;
+
+}
+
+
+/* ==========================================================
+   LOADER LOGO
+   ========================================================== */
+
+#loader img{
+
+    animation:floating 2.5s ease-in-out infinite;
+
+}
+
+.loader-bar::before{
+
+    animation:loaderMove 2s linear infinite;
+
+}
+
+@keyframes loaderMove{
+
+    0%{
+
+        transform:translateX(-100%);
+
+    }
+
+    100%{
+
+        transform:translateX(320%);
+
+    }
+
+}
+
+
+/* ==========================================================
+   STATISTICS
+   ========================================================== */
+
+.stat-card{
+
+    transition:.4s;
+
+}
+
+.stat-card:hover{
+
+    animation:glow 1.3s infinite;
+
+}
+
+
+/* ==========================================================
+   WHY CARD
+   ========================================================== */
+
+.why-card{
+
+    transition:.35s;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-12px) scale(1.02);
+
+}
+
+
+/* ==========================================================
+   TIMELINE
+   ========================================================== */
+
+.timeline-item{
+
+    animation:fadeLeft 1s ease;
+
+}
+
+
+/* ==========================================================
+   TESTIMONIAL
+   ========================================================== */
+
+.testimonial-card{
+
+    transition:.4s;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-12px);
+
+    animation:glow 1.4s infinite;
+
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.faq-item{
+
+    transition:.35s;
+
+}
+
+.faq-item:hover{
+
+    border-color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+.cta-content{
+
+    animation:zoomIn 1s ease;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.footer-column{
+
+    animation:fadeUp .9s ease;
+
+}
+
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.logo img{
+
+    transition:.4s;
+
+}
+
+.logo img:hover{
+
+    transform:rotate(360deg) scale(1.08);
+
+}
+
+
+/* ==========================================================
+   NAVIGATION LINKS
+   ========================================================== */
+
+.nav-links a{
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   MOBILE MENU
+   ========================================================== */
+
+.mobile-menu{
+
+    transition:.4s;
+
+}
+
+
+/* ==========================================================
+   SCROLL REVEAL CLASSES
+   ========================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================================
+   PULSE GLOW
+   ========================================================== */
+
+@keyframes pulseGlow{
+
+    0%{
+
+        box-shadow:0 0 10px rgba(0,229,255,.25);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 30px rgba(0,229,255,.5),
+        0 0 60px rgba(123,47,247,.25);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 10px rgba(0,229,255,.25);
+
+    }
+
+}
+
+.glow{
+
+    animation:pulseGlow 2.5s infinite;
+
+}
+
+
+/* ==========================================================
+   END OF FILE
+   ========================================================== */
