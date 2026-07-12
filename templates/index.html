@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- ==========================================
+        META INFORMATION
+    =========================================== -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Auroun DataSYN 2.0 | AI Powered Data Analytics Platform</title>
+
+    <meta name="description"
+        content="Auroun DataSYN 2.0 is a futuristic AI-powered data analytics platform built for intelligent business insights, automation, visualization and innovation.">
+
+    <meta name="keywords"
+        content="Auroun DataSYN 2.0, AI, Data Analytics, Machine Learning, Dashboard, Automation">
+
+    <!-- ==========================================
+        FAVICON
+    =========================================== -->
+
+    <link rel="icon" href="{{ url_for('static', filename='css/logo.png') }}">
+
+    <!-- ==========================================
+        GOOGLE FONTS
+    =========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ==========================================
+        CSS FILES
+    =========================================== -->
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/animations.css') }}">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/responsive.css') }}">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+        PAGE LOADER
+    =========================================== -->
+
+    <div class="loader">
+
+        <img src="{{ url_for('static', filename='css/logo.png') }}"
+            alt="Auroun DataSYN 2.0 Logo">
+
+        <h2>Auroun DataSYN 2.0</h2>
+
+        <div class="loader-bar"></div>
+
+    </div>
+
+    <!-- ==========================================
+        BACKGROUND EFFECTS
+    =========================================== -->
+
+    <div id="particles-js"></div>
+
+    <div class="gradient-overlay"></div>
+
+    <!-- ==========================================
+        HEADER
+    =========================================== -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <!-- Logo -->
+
+            <a href="/" class="logo">
+
+                <img src="{{ url_for('static', filename='css/logo.png') }}"
+                    alt="Auroun DataSYN 2.0">
+
+                <span>Auroun DataSYN 2.0</span>
+
+            </a>
+
+            <!-- Navigation -->
+
+            <ul class="nav-links">
+
+                <li><a href="/">Home</a></li>
+
+                <li><a href="/about">About</a></li>
+
+                <li><a href="/services">Services</a></li>
+
+                <li><a href="/careers">Careers</a></li>
+
+                <li><a href="/contact">Contact</a></li>
+
+                <li><a href="/subscription">Subscription</a></li>
+
+            </ul>
+
+            <!-- CTA -->
+
+            <a href="/dashboard" class="btn-primary">
+
+                Get Started
+
+            </a>
+
+            <!-- Hamburger -->
+
+            <div class="hamburger">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </nav>
+
+        <!-- Mobile Navigation -->
+
+        <div class="mobile-menu">
+
+            <a href="/">Home</a>
+
+            <a href="/about">About</a>
+
+            <a href="/services">Services</a>
+
+            <a href="/careers">Careers</a>
+
+            <a href="/contact">Contact</a>
+
+            <a href="/subscription">Subscription</a>
+
+        </div>
+
+    </header>
+
+    <div class="hero-cube">
+
+    <div class="cube-glow"></div>
+
+    <canvas id="cubeCanvas"></canvas>
+
+</div>
+
+    <!-- ==========================================
+        HERO SECTION
+    =========================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+            <p class="hero-tag">
+                AI • DATA • ANALYTICS • AUTOMATION
+            </p>
+
+            <h1>
+
+                Empowering Businesses
+
+                <br>
+
+                With Intelligent
+
+                <span>AI Solutions</span>
+
+            </h1>
+
+            <p class="hero-text">
+
+                Welcome to Auroun DataSYN 2.0 — a next-generation AI-powered platform
+                designed to transform raw data into intelligent insights through
+                advanced analytics, automation, and modern visualization.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/dashboard" class="primary-btn">
+                    Launch Platform
+                </a>
+
+                <a href="/about" class="secondary-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="glass-card card-one">
+
+                <h3>98%</h3>
+
+                <p>Prediction Accuracy</p>
+
+            </div>
+
+            <div class="glass-card card-two">
+
+                <h3>250+</h3>
+
+                <p>Datasets Processed</p>
+
+            </div>
+
+            <div class="glass-card card-three">
+
+                <h3>24/7</h3>
+
+                <p>AI Monitoring</p>
+
+            </div>
+
+            <div class="glass-card card-four">
+
+                <h3>Cloud AI</h3>
+
+                <p>Business Intelligence</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== PART 1 ENDS HERE ===== -->
+     <!-- ==========================================
+        COMPANY OVERVIEW
+    =========================================== -->
+
+    <section class="company-overview">
+
+        <div class="section-heading">
+
+            <span>ABOUT AUROUN DATASYN 2.0</span>
+
+            <h2>
+                Building the Future of
+                Artificial Intelligence &
+                Data Analytics
+            </h2>
+
+            <p>
+
+                Auroun DataSYN 2.0 is a futuristic AI-driven platform focused on
+                intelligent analytics, automation, engineering solutions,
+                visualization, and business intelligence. Our goal is to
+                simplify complex data and transform it into actionable
+                decisions.
+
+            </p>
+
+        </div>
+
+        <div class="overview-grid">
+
+            <div class="overview-card">
+
+                <div class="card-icon">
+                    🧠
+                </div>
+
+                <h3>Artificial Intelligence</h3>
+
+                <p>
+                    Intelligent AI-powered solutions that improve productivity,
+                    automate workflows and provide smart recommendations.
+                </p>
+
+            </div>
+
+            <div class="overview-card">
+
+                <div class="card-icon">
+                    📊
+                </div>
+
+                <h3>Business Analytics</h3>
+
+                <p>
+                    Transform raw business data into meaningful insights through
+                    interactive dashboards and predictive analysis.
+                </p>
+
+            </div>
+
+            <div class="overview-card">
+
+                <div class="card-icon">
+                    ☁️
+                </div>
+
+                <h3>Cloud Solutions</h3>
+
+                <p>
+                    Secure, scalable and modern cloud-based infrastructure for
+                    high-performance analytics and collaboration.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+        SERVICES PREVIEW
+    =========================================== -->
+
+    <section class="services-preview">
+
+        <div class="section-heading">
+
+            <span>OUR SERVICES</span>
+
+            <h2>
+                Smart Solutions
+                Powered By AI
+            </h2>
+
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <h3>AI Analytics</h3>
+
+                <p>
+                    Generate intelligent insights from large datasets using
+                    modern AI technologies.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Business Intelligence</h3>
+
+                <p>
+                    Interactive dashboards and KPI tracking for better business
+                    decisions.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Data Visualization</h3>
+
+                <p>
+                    Beautiful charts, reports and visual analytics that make
+                    information easy to understand.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Automation</h3>
+
+                <p>
+                    Reduce repetitive work using intelligent workflow
+                    automation and AI-powered processes.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Civil Engineering Intelligence</h3>
+
+                <p>
+                    AI-assisted analysis for engineering drawings, reports and
+                    infrastructure projects.
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>Future AI Solutions</h3>
+
+                <p>
+                    Scalable technologies designed for tomorrow's businesses and
+                    next-generation innovation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ==========================================
+        TECHNOLOGY STACK
+    =========================================== -->
+
+    <section class="technology-stack">
+
+        <div class="section-heading">
+
+            <span>TECHNOLOGY</span>
+
+            <h2>
+
+                Technologies Behind
+                Auroun DataSYN 2.0
+
+            </h2>
+
+        </div>
+
+        <div class="tech-grid">
+
+            <div class="tech-box">Python</div>
+
+            <div class="tech-box">Flask</div>
+
+            <div class="tech-box">HTML5</div>
+
+            <div class="tech-box">CSS3</div>
+
+            <div class="tech-box">JavaScript</div>
+
+            <div class="tech-box">Chart.js</div>
+
+            <div class="tech-box">Three.js</div>
+
+            <div class="tech-box">GSAP</div>
+
+            <div class="tech-box">SQLite</div>
+
+            <div class="tech-box">Machine Learning</div>
+
+            <div class="tech-box">AI Automation</div>
+
+            <div class="tech-box">Business Intelligence</div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== PART 2 ENDS HERE ===== -->
+     <!-- ==========================================
+        STATISTICS SECTION
+    =========================================== -->
+
+    <section class="statistics">
+
+        <div class="section-heading">
+
+            <span>OUR ACHIEVEMENTS</span>
+
+            <h2>Driving Innovation Through Data</h2>
+
+            <p>
+                We combine artificial intelligence, analytics and engineering
+                expertise to build modern digital solutions.
+            </p>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h2 class="counter">250+</h2>
+                <p>Projects Analyzed</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 class="counter">98%</h2>
+                <p>Prediction Accuracy</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 class="counter">24/7</h2>
+                <p>AI Monitoring</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 class="counter">100+</h2>
+                <p>Business Reports</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+        WHY CHOOSE US
+    =========================================== -->
+
+    <section class="why-us">
+
+        <div class="section-heading">
+
+            <span>WHY AUROUN DATASYN 2.0</span>
+
+            <h2>
+                Designed For Tomorrow's
+                Digital World
+            </h2>
+
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <h3>⚡ High Performance</h3>
+
+                <p>
+                    Optimized architecture ensuring fast performance,
+                    scalability and responsiveness.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>🔒 Secure Platform</h3>
+
+                <p>
+                    Built with security-first principles to protect
+                    valuable business information.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>🤖 AI Powered</h3>
+
+                <p>
+                    Advanced AI technologies delivering smarter
+                    analytics and automation.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>📈 Future Ready</h3>
+
+                <p>
+                    A scalable platform prepared for future AI
+                    integrations and enterprise growth.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+        AI DEVELOPMENT TIMELINE
+    =========================================== -->
+
+    <section class="timeline">
+
+        <div class="section-heading">
+
+            <span>OUR JOURNEY</span>
+
+            <h2>
+                Auroun DataSYN Roadmap
+            </h2>
+
+        </div>
+
+        <div class="timeline-container">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>Vision</h3>
+
+                    <p>
+                        Creating an AI ecosystem capable of transforming
+                        business intelligence and engineering analytics.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>Development</h3>
+
+                    <p>
+                        Designing a premium platform with intelligent
+                        visualization and automation features.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>Launch</h3>
+                    <p>
+                        Introducing Auroun DataSYN as a modern AI-powered
+                        analytics solution.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <h3>Future</h3>
+
+                    <p>
+                        Expanding into enterprise AI, cloud intelligence,
+                        engineering solutions and automation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+        TESTIMONIALS
+    =========================================== -->
+
+    <section class="testimonials">
+
+        <div class="section-heading">
+
+            <span>TESTIMONIALS</span>
+
+            <h2>
+                Trusted Vision For The Future
+            </h2>
+
+        </div>
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial-card">
+
+                <p>
+                    "Auroun DataSYN represents a bold vision for combining
+                    AI, analytics and engineering into one intelligent platform."
+                </p>
+
+                <h4>Innovation Focus</h4>
+
+            </div>
+
+            <div class="testimonial-card">
+
+                <p>
+                    "A premium concept with strong potential for modern
+                    business intelligence and automation."
+                </p>
+
+                <h4>Technology Vision</h4>
+
+            </div>
+
+            <div class="testimonial-card">
+
+                <p>
+                    "Designed with scalability, professionalism and future
+                    AI integration in mind."
+                </p>
+
+                <h4>Future Ready</h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== PART 3 ENDS HERE ===== -->
+     <!-- ==========================================
+        FAQ SECTION
+    =========================================== -->
+
+    <section class="faq">
+
+        <div class="section-heading">
+
+            <span>FREQUENTLY ASKED QUESTIONS</span>
+
+            <h2>Everything You Need To Know</h2>
+
+        </div>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    What is Auroun DataSYN?
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Auroun DataSYN is an AI-powered analytics platform
+                        designed to simplify complex data using intelligent
+                        dashboards, automation and business insights.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Which industries can use Auroun DataSYN?
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Business intelligence, civil engineering,
+                        analytics, education, research and enterprise
+                        organizations.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+                    Is Auroun DataSYN scalable?
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. The platform is designed to grow with
+                        organizations and support future AI integrations.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+        CALL TO ACTION
+    =========================================== -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <h2>
+
+                Ready To Experience
+                Intelligent Data Analytics?
+
+            </h2>
+
+            <p>
+
+                Start your journey with Auroun DataSYN and discover
+                the future of AI-powered decision making.
+
+            </p>
+
+            <a href="/dashboard" class="primary-btn">
+
+                Get Started
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+        FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-column">
+
+                <img src="{{ url_for('static', filename='css/logo.png') }}"
+                    alt="Auroun DataSYN Logo"
+                    class="footer-logo">
+
+                <h3>Auroun DataSYN</h3>
+
+                <p>
+
+                    Building the future of Artificial Intelligence,
+                    Data Analytics and Business Intelligence through
+                    modern technology.
+
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="/">Home</a></li>
+
+                    <li><a href="/about">About</a></li>
+
+                    <li><a href="/services">Services</a></li>
+
+                    <li><a href="/careers">Careers</a></li>
+
+                    <li><a href="/contact">Contact</a></li>
+
+                    <li><a href="/subscription">Subscription</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Technologies</h3>
+
+                <ul>
+
+                    <li>Artificial Intelligence</li>
+
+                    <li>Machine Learning</li>
+
+                    <li>Business Intelligence</li>
+
+                    <li>Cloud Computing</li>
+
+                    <li>Automation</li>
+
+                    <li>Data Visualization</li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+                <p>Email: info@auroundatasyn.com</p>
+
+                <p>India</p>
+
+                <p>Innovation • Intelligence • Excellence</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 Auroun DataSYN 2.0. All Rights Reserved.
+
+            </p>
+
+            <p>
+
+                Chief Managing Director: Arun Kumar Saxena
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+        JAVASCRIPT
+    =========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/cube.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/neural.js') }}"></script>
+
+</body>
+
+</html>
