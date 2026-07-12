@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Dashboard | Auroun DataSYN</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='css/logo.png') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+<div class="gradient-overlay"></div>
+
+<header class="header">
+
+<nav class="navbar">
+
+<a href="/" class="logo">
+
+<img src="{{ url_for('static', filename='css/logo.png') }}" alt="Logo">
+
+<span>Auroun DataSYN</span>
+
+</a>
+
+<ul class="nav-links">
+
+<li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/careers">Careers</a></li>
+<li><a href="/contact">Contact</a></li>
+<li><a href="/subscription">Subscription</a></li>
+
+</ul>
+
+<div class="hamburger">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</nav>
+
+<div class="mobile-menu">
+
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/services">Services</a>
+<a href="/careers">Careers</a>
+<a href="/contact">Contact</a>
+<a href="/subscription">Subscription</a>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<p class="hero-tag">
+AI COMMAND CENTER
+</p>
+
+<h1>
+Auroun DataSYN
+<span>Dashboard</span>
+</h1>
+
+<p class="hero-text">
+Monitor projects, AI insights, client inquiries,
+career applications and business performance
+from one intelligent dashboard.
+</p>
+
+</div>
+
+</section>
+
+<section class="dashboard">
+
+<div class="dashboard-header">
+
+<h2>Business Overview</h2>
+
+<p>Real-time company statistics</p>
+
+</div>
+
+<div class="kpi-grid">
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">📂</div>
+<h2>12</h2>
+<p>Active Projects</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">👥</div>
+<h2>35</h2>
+<p>Total Clients</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">📧</div>
+<h2>58</h2>
+<p>Contact Requests</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">💼</div>
+<h2>21</h2>
+<p>Job Applications</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">📈</div>
+<h2>₹0</h2>
+<p>Revenue</p>
+</div>
+
+<div class="kpi-card reveal">
+<div class="kpi-icon">🤖</div>
+<h2>99%</h2>
+<p>AI Accuracy</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>AI DATASET CENTER</span>
+
+<h2>Upload Dataset for AI Analysis</h2>
+
+<p>
+Upload CSV, Excel or JSON datasets and let Auroun DataSYN
+generate intelligent insights automatically.
+</p>
+
+</div>
+
+<div class="glass-card upload-card reveal">
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+
+<div class="upload-zone">
+
+<div class="upload-icon">📁</div>
+
+<h3>Drag & Drop Dataset</h3>
+
+<p>CSV • XLSX • JSON</p>
+
+<input
+type="file"
+id="dataset"
+name="dataset"
+accept=".csv,.xlsx,.json"
+required>
+
+<label for="dataset" class="primary-btn">
+
+Browse Dataset
+
+</label>
+
+</div>
+
+<div class="upload-actions">
+
+<button type="submit" class="primary-btn">
+
+Analyze Dataset
+
+</button>
+
+</div>
+
+</form>
+
+{% if uploaded %}
+
+<div class="dataset-result reveal">
+
+<h3>✅ Dataset Uploaded Successfully</h3>
+
+<div class="dataset-info">
+
+<div class="glass-card">
+<h4>📄 File Name</h4>
+<p>{{ filename }}</p>
+</div>
+
+<div class="glass-card">
+<h4>📊 Rows</h4>
+<p>{{ rows }}</p>
+</div>
+
+<div class="glass-card">
+<h4>📋 Columns</h4>
+<p>{{ columns }}</p>
+</div>
+
+</div>
+
+<div class="glass-card preview-card">
+
+<h3>Dataset Preview</h3>
+
+<div class="table-responsive">{{ preview|safe }}
+
+</div>
+
+</div>
+
+<div class="glass-card">
+
+<h2>AI Statistical Summary</h2>
+
+<div class="table-responsive">
+
+{{ summary|safe }}
+
+</div>
+
+</div>
+
+<div class="dashboard-grid">
+
+{% if histogram_chart %}
+<div class="glass-card reveal">
+<h2>Histogram</h2>
+<img src="{{ url_for('static', filename=histogram_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if bar_chart %}
+<div class="glass-card reveal">
+<h2>Bar Chart</h2>
+<img src="{{ url_for('static', filename=bar_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if pie_chart %}
+<div class="glass-card reveal">
+<h2>Pie Chart</h2>
+<img src="{{ url_for('static', filename=pie_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if line_chart %}
+<div class="glass-card reveal">
+<h2>Line Chart</h2>
+<img src="{{ url_for('static', filename=line_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if scatter_chart %}
+<div class="glass-card reveal">
+<h2>Scatter Chart</h2>
+<img src="{{ url_for('static', filename=scatter_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+{% if column_chart %}
+<div class="glass-card reveal">
+<h2>Column Chart</h2>
+<img src="{{ url_for('static', filename=column_chart) }}" class="chart-img">
+</div>
+{% endif %}
+
+</div>
+
+{% endif %}
+
+</div>
+
+</section><!-- ==========================================
+     AI INSIGHTS
+========================================== -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+
+        <span>AI INSIGHTS</span>
+
+        <h2>Business Intelligence Overview</h2>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="glass-card reveal">
+
+            <h3>📊 Business Growth</h3>
+
+            <p>
+
+                Your AI platform is successfully configured to manage
+                analytics, engineering, automation and intelligent
+                business services.
+
+            </p>
+
+        </div>
+
+        <div class="glass-card reveal">
+
+            <h3>⚡ System Status</h3>
+
+            <p>
+
+                Flask backend connected successfully.
+
+                Dashboard modules are operational.
+
+            </p>
+
+        </div>
+
+        <div class="glass-card reveal">
+
+            <h3>🎯 AI Recommendation</h3>
+
+            <p>
+
+                Continue improving dataset analytics,
+                AI report generation,
+                Civil Engineering Intelligence,
+                and customer management.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     BUSINESS ANALYTICS
+========================================== -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>BUSINESS ANALYTICS</span>
+
+<h2>
+
+Performance Dashboard
+
+</h2>
+
+</div>
+
+<div class="dashboard-grid">
+
+<div class="glass-card chart-card reveal">
+
+<h3>Monthly Performance</h3>
+
+<canvas id="growthChart"></canvas>
+
+</div>
+
+<div class="glass-card reveal">
+
+<h3>🤖 AI Copilot</h3>
+
+<div class="copilot-box">
+
+<p><strong>Welcome Arun Kumar Saxena.</strong></p>
+
+<hr>
+
+<p>✔ AI Engine : Online</p>
+
+<p>✔ Dashboard : Active</p>
+
+<p>✔ Dataset Module : Ready</p>
+
+<p>✔ Flask Backend : Connected</p>
+
+<p>✔ Visualization : Enabled</p>
+
+<p>✔ Report Generator : Ready</p>
+
+<p>
+
+Recommendation:
+
+Deploy Auroun DataSYN and begin
+real client onboarding.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     RECENT ACTIVITY
+========================================== -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>RECENT ACTIVITY</span>
+
+<h2>
+
+Latest Platform Updates
+
+</h2>
+
+</div>
+
+<div class="timeline-container">
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>Website Created</h3>
+
+<p>
+
+Auroun DataSYN 2.0 initialized successfully.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>Dataset Module</h3>
+
+<p>
+
+AI Dataset Upload Center completed.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>Analytics Ready</h3>
+
+<p>
+
+Charts and intelligent insights
+have been integrated.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>Next Target</h3>
+
+<p>
+
+AI Report Generator,
+Civil Engineering AI,
+Live Database,
+User Authentication.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================================
+     QUICK ACTIONS
+========================================== -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>QUICK ACTIONS</span>
+
+<h2>Manage Your Platform</h2>
+
+</div>
+
+<div class="dashboard-grid">
+
+<a href="/services" class="glass-card action-card reveal">
+
+<h3>🚀 Services</h3>
+
+<p>Explore AI & Software Services.</p>
+
+</a>
+
+<a href="/careers" class="glass-card action-card reveal">
+
+<h3>💼 Careers</h3>
+
+<p>Manage Recruitment Portal.</p>
+
+</a>
+
+<a href="/contact" class="glass-card action-card reveal">
+
+<h3>📧 Contact</h3>
+
+<p>View Client Enquiries.</p>
+
+</a>
+
+<a href="/subscription" class="glass-card action-card reveal">
+
+<h3>⭐ Subscription</h3>
+
+<p>Premium Plans & Pricing.</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     SYSTEM HEALTH
+========================================== -->
+
+<section class="dashboard-section">
+
+<div class="section-heading">
+
+<span>SYSTEM STATUS</span>
+
+<h2>Platform Health</h2>
+
+</div>
+
+<div class="dashboard-grid">
+
+<div class="glass-card reveal">
+
+<h3>🟢 Website</h3>
+
+<p>Operational</p>
+
+</div>
+
+<div class="glass-card reveal">
+
+<h3>🤖 AI Engine</h3>
+
+<p>Online</p>
+
+</div>
+
+<div class="glass-card reveal">
+
+<h3>🗄 Database</h3>
+
+<p>Connected</p>
+
+</div>
+
+<div class="glass-card reveal">
+
+<h3>🔒 Security</h3>
+
+<p>Protected</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     FINAL CTA
+========================================== -->
+
+<section class="cta">
+
+<div class="cta-content reveal">
+
+<h2>
+
+Welcome To Auroun DataSYN 2.0
+
+</h2>
+
+<p>
+
+An AI Powered Platform for
+Artificial Intelligence,
+Business Intelligence,
+Civil Engineering,
+Analytics and Enterprise Solutions.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="/services" class="primary-btn">
+
+Explore Services
+
+</a>
+
+<a href="/contact" class="secondary-btn">
+
+Contact Us
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-column">
+
+<img src="{{ url_for('static', filename='css/logo.png') }}"
+class="footer-logo"
+alt="Auroun DataSYN">
+
+<h3>Auroun DataSYN</h3>
+
+<p>
+
+Building Intelligent Software
+For Tomorrow.
+
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/careers">Careers</a></li>
+<li><a href="/contact">Contact</a></li>
+<li><a href="/subscription">Subscription</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Contact</h3>
+
+<p>📧 arunsaxena7785@gmail.com</p>
+
+<p>📞 +91 9310536939</p>
+
+<p>🌐 India</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Leadership</h3>
+
+<p>Chief Managing Director</p>
+
+<strong>
+
+Arun Kumar Saxena
+
+</strong>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Auroun DataSYN. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById('growthChart');
+
+if(ctx){
+
+new Chart(ctx,{
+
+type:'line',
+
+data:{
+
+labels:['Jan','Feb','Mar','Apr','May','Jun'],
+
+datasets:[{
+
+label:'Platform Growth',
+
+data:[5,12,20,32,48,70],
+
+fill:false,
+
+borderWidth:3,
+
+tension:0.4
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+
+legend:{
+
+display:true
+
+}
+
+}
+
+}
+
+});
+
+}
+
+</script>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/neural.js') }}"></script>
+
+</body>
+</html>
