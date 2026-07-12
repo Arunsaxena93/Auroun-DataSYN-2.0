@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Apply | Auroun DataSYN</title>
+
+<link rel="icon" href="{{ url_for('static', filename='css/logo.png') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/animations.css') }}">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/responsive.css') }}">
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<div class="gradient-overlay"></div>
+
+<header class="header">
+
+<nav class="navbar">
+
+<a href="/" class="logo">
+
+<img src="{{ url_for('static', filename='css/logo.png') }}">
+
+<span>Auroun DataSYN</span>
+
+</a>
+
+<ul class="nav-links">
+
+<li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/careers">Careers</a></li>
+<li><a href="/contact">Contact</a></li>
+<li><a href="/subscription">Subscription</a></li>
+
+</ul>
+
+<a href="/dashboard" class="btn-primary">
+
+Get Started
+
+</a>
+
+<div class="hamburger">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+</nav>
+
+<div class="mobile-menu">
+
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/services">Services</a>
+<a href="/careers">Careers</a>
+<a href="/contact">Contact</a>
+<a href="/subscription">Subscription</a>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<p class="hero-tag">
+
+CAREER APPLICATION
+
+</p>
+
+<h1>
+
+Apply For
+
+<span>
+
+{{ position }}
+
+</span>
+
+</h1>
+
+<p class="hero-text">
+
+Complete the application below. Our HR team will review your
+profile and contact you if your qualifications match our
+requirements.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="contact-section">
+
+<div class="section-heading">
+
+<span>APPLICATION FORM</span>
+
+<h2>
+
+Join Auroun DataSYN
+
+</h2>
+
+</div>
+
+<form class="contact-form"
+method="POST"
+action="/submit_application"
+enctype="multipart/form-data">
+<!-- ==========================================
+     PERSONAL INFORMATION
+========================================== -->
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>Full Name *</label>
+
+<input
+type="text"
+name="fullname"
+placeholder="Enter your full name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Email Address *</label>
+
+<input
+type="email"
+name="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Phone Number *</label>
+
+<input
+type="tel"
+name="phone"
+placeholder="+91 XXXXX XXXXX"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Current City *</label>
+
+<input
+type="text"
+name="city"
+placeholder="Current City"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Highest Qualification *</label>
+
+<select name="qualification" required>
+
+<option value="">Select Qualification</option>
+
+<option>B.Tech</option>
+
+<option>M.Tech</option>
+
+<option>BCA</option>
+
+<option>MCA</option>
+
+<option>B.Sc</option>
+
+<option>M.Sc</option>
+
+<option>MBA</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Years of Experience *</label>
+
+<select name="experience" required>
+
+<option value="">Select</option>
+
+<option>Fresher</option>
+
+<option>0-1 Years</option>
+
+<option>1-3 Years</option>
+
+<option>3-5 Years</option>
+
+<option>5+ Years</option>
+
+</select>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+     PROFESSIONAL DETAILS
+========================================== -->
+
+<div class="form-group">
+
+<label>Position Applied For</label>
+
+<input
+type="text"
+name="position"
+value="{{ position }}"
+readonly>
+
+</div>
+
+<div class="form-group">
+
+<label>Technical Skills *</label>
+
+<textarea
+
+name="skills"
+
+rows="4"
+
+placeholder="Python, Flask, SQL, Machine Learning, HTML, CSS, JavaScript..."
+
+required>
+
+</textarea>
+
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>LinkedIn Profile</label>
+
+<input
+type="url"
+name="linkedin"
+placeholder="https://linkedin.com/in/...">
+
+</div>
+
+<div class="form-group">
+
+<label>GitHub Profile</label>
+
+<input
+type="url"
+name="github"
+placeholder="https://github.com/...">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Portfolio Website</label>
+
+<input
+type="url"
+name="portfolio"
+placeholder="https://yourportfolio.com">
+
+</div>
+
+<div class="form-group">
+
+<label>Upload Resume (PDF / DOC / DOCX) *</label>
+
+<input
+type="file"
+name="resume"
+accept=".pdf,.doc,.docx"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>Cover Letter</label>
+
+<textarea
+
+name="cover"
+
+rows="6"
+
+placeholder="Tell us why you would like to join Auroun DataSYN...">
+
+</textarea>
+
+</div>
+
+<div class="form-group checkbox-group">
+
+<label>
+
+<input
+type="checkbox"
+required>
+
+I certify that the information provided is accurate and complete.
+
+</label>
+
+</div>
+
+<div class="hero-buttons">
+
+<button
+type="submit"
+class="primary-btn">
+
+Submit Application
+
+</button>
+
+<button
+type="reset"
+class="secondary-btn">
+
+Reset Form
+
+</button>
+
+</div>
+</form>
+
+</section>
+
+<!-- ==========================================
+     WHY JOIN AUROUN
+========================================== -->
+
+<section class="why-us">
+
+    <div class="section-heading">
+
+        <span>WHY AUROUN DATASYN</span>
+
+        <h2>
+
+            More Than A Job,
+            Build Your Career
+
+        </h2>
+
+        <p>
+
+            At Auroun DataSYN, we believe in innovation,
+            ownership, continuous learning and building
+            technologies that solve real-world problems.
+
+        </p>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card reveal">
+
+            <h3>🚀 Innovation</h3>
+
+            <p>
+
+                Work on AI, Analytics and intelligent
+                enterprise applications.
+
+            </p>
+
+        </div>
+
+        <div class="why-card reveal">
+
+            <h3>📚 Learning</h3>
+
+            <p>
+
+                Continuous learning through challenging
+                projects and modern technologies.
+
+            </p>
+
+        </div>
+
+        <div class="why-card reveal">
+
+            <h3>🤝 Team Culture</h3>
+
+            <p>
+
+                Collaborate with passionate professionals
+                in a supportive environment.
+
+            </p>
+
+        </div>
+
+        <div class="why-card reveal">
+
+            <h3>📈 Career Growth</h3>
+
+            <p>
+
+                Grow with the company and take ownership
+                of impactful projects.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-column">
+
+<img src="{{ url_for('static', filename='css/logo.png') }}"
+class="footer-logo"
+alt="Auroun DataSYN">
+
+<h3>Auroun DataSYN</h3>
+
+<p>
+
+Empowering businesses with Artificial Intelligence,
+Business Intelligence and innovative software solutions.
+
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/services">Services</a></li>
+<li><a href="/careers">Careers</a></li>
+<li><a href="/contact">Contact</a></li>
+<li><a href="/subscription">Subscription</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Career Support</h3>
+
+<p>
+
+Email:<br>
+
+arunsaxena7785@gmail.com
+
+</p>
+
+<p>
+
+Phone:<br>
+
++91 9310536939
+
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Response Time</h3>
+
+<p>
+
+Monday – Saturday
+
+</p>
+
+<p>
+
+9:00 AM – 6:00 PM (IST)
+
+</p>
+
+<p>
+
+Response within 24 Hours
+
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Auroun DataSYN. All Rights Reserved.
+
+</p>
+
+<p>
+
+Chief Managing Director
+
+<strong>
+
+Arun Kumar Saxena
+
+</strong>
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/neural.js') }}"></script>
+
+</body>
+
+</html>
